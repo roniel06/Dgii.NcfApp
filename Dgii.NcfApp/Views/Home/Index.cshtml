@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenidos</h1>
+    <div class="jumbotron">
+        <h3>Sistema de validacion de NCF</h3>
+    </div>
+    <form method="post" asp-action="Index">
+
+        <div class="row">
+            <div class="col-md-5">
+                <div class="form-control">
+                    <label class="label">Numero de RNC</label>
+                    <input class="form-control" type="number" name="rnc" id="rnc"/>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-5">
+                <div class="form-control">
+                    <label class="label">Numero de NCF</label>
+                    <input class="form-control" name="ncf" id="ncf"/>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-4 offset-md-4">
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Validar</button>
+            </div>
+        </div>
+    </form>
+
+</div>
