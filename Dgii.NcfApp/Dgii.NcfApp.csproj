@@ -10,6 +10,12 @@
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="RestClient.Net" Version="2.0.1" />
+    <PackageReference Include="RestSharp" Version="110.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Helpers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helpers\" />
   </ItemGroup>
 </Project>

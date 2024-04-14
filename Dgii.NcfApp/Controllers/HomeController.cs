@@ -24,15 +24,20 @@ public class HomeController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Index([FromForm] string rnc,[FromForm] string ncf)
+    public async Task<IActionResult> Index([FromForm] string rnc, [FromForm] string ncf)
     {
-        if (ModelState.IsValid)
+
+        var ncfResult = await _soapDgiiService.GetNcfAsync(rnc, ncf);
+        if (ncfResult is not null)
         {
-            var ncfResult = await _soapDgiiService.GetNcfAsync(rnc, ncf);
             ViewBag.NcfResult = ncfResult;
+            var rncResult = await _soapDgiiService.GetRNC(rnc);
+            ViewBag.Rnc = rncResult;
             return View();
         }
-        return View(ModelState);
+        ViewBag.Error = "No se encontro nigun registo con los datos proporcionados.";
+        return View();
+
     }
 
     public IActionResult Privacy()
