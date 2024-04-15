@@ -8,7 +8,9 @@ namespace Dgii.NcfApp.Context
 	{
 		public ProjectDbContext(DbContextOptions options) : base(options)
 		{
+			
 			Database.EnsureCreated();
+			Database.Migrate();
 		}
 
 

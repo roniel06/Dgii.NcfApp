@@ -29,14 +29,14 @@
                         <th>Modelo</th>
                         <th>Color</th>
                         <th>Año</th>
-                        <th>Estado</th>
                     </tr>
                 </thead>
                 <tbody>
                     @{
                         if (ViewBag.PlacasHistory is not null)
                         {
-                            foreach (var result in ViewBag.PlacasHistory)
+                            var placasHistory = ViewBag.PlacasHistory as List<PlacasResultHistory>;
+                            foreach (var result in placasHistory)
                             {
                                         <tr>
                                             <td>@result.Id</td>
@@ -47,7 +47,6 @@
                                             <td>@result.ModeloVehiculo</td>
                                             <td>@result.Color</td>
                                             <td>@result.AnioFabricacion</td>
-                                            <td>@result.Estado</td>
                                         </tr>
                             }
 

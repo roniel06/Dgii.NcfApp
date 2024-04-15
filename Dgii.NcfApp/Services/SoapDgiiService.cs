@@ -101,12 +101,13 @@ namespace Dgii.NcfApp.Services
                     {
                         var responseContent = await response.Content.ReadAsStringAsync();
                         var result = XmlClassHelper.MapXmlToGetPlacaResult(responseContent);
+                        await _dgiiHistoryService.CreatePlacaHistory(result);
                         return result;
                     }
                     catch (Exception)
                     {
 
-                        throw;
+                        return null;
                     }
 
                 }

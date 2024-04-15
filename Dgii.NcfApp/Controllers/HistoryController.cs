@@ -28,15 +28,15 @@ namespace Dgii.NcfApp.Controllers
             return View();
         }
 
-        //public async Task<IActionResult> PlacasHistory()
-        //{
-        //    var result = await _service.GetPlacasHistory();
-        //    if (result.Any())
-        //    {
-        //        ViewBag.PlacasHistory = result;
-        //    }
-        //    return View();
-        //}
+        public async Task<IActionResult> PlacasHistory()
+        {
+            var result = await _service.GetPlacasHistory();
+            if (result.Any())
+            {
+                ViewBag.PlacasHistory = result;
+            }
+            return View();
+        }
     }
 }
 

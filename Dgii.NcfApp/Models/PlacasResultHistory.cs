@@ -12,9 +12,8 @@ namespace Dgii.NcfApp.Models
         public string MarcaVehiculo { get; set; }
         public string ModeloVehiculo { get; set; }
         public string Color { get; set; }
-        public long AnioFabricacion { get; set; }
-        public string Estado { get; set; }
-        public long RncCedulaPropietario { get; set; }
+        public string AnioFabricacion { get; set; }
+        public string RncCedulaPropietario { get; set; }
     }
 }
 

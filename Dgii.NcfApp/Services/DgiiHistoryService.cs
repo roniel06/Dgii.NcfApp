@@ -10,7 +10,7 @@ namespace Dgii.NcfApp.Services
         Task<bool> CreateNcfHistory(NcfResult ncfResult);
         Task<bool> CreatePlacaHistory(GetPlacaResponse placasResult);
         Task<IEnumerable<NcfResultHistory>> GetNcfHistory();
-        //Task<IEnumerable<Placa>> GetPlacasHistory();
+        Task<IEnumerable<PlacasResultHistory>> GetPlacasHistory();
 
     }
 
@@ -54,12 +54,12 @@ namespace Dgii.NcfApp.Services
         {
             var placaResult = new PlacasResultHistory
             {
-                //Placa = placasResult.Placa.PLACA,
-                //MarcaVehiculo = placasResult.Placa.MARCA_VEHICULO,
-                //ModeloVehiculo = placasResult.Placa.MODELO_VEHICULO,
-                //Color = placasResult.Placa.COLOR,
-                //AnioFabricacion = placasResult.Placa.ANO_FABRICACION,
-                //RncCedulaPropietario = placasResult.Placa.RNC_CEDULA_PROPIETARIO,
+                Placa = placasResult.Placa.PLACA,
+                MarcaVehiculo = placasResult.Placa.MARCA_VEHICULO,
+                ModeloVehiculo = placasResult.Placa.MODELO_VEHICULO,
+                Color = placasResult.Placa.COLOR,
+                AnioFabricacion = placasResult.Placa.ANO_FABRICACION,
+                RncCedulaPropietario = placasResult.Placa.RNC_CEDULA_PROPIETARIO,
                 FechaCreacion = DateTime.Now
             };
             await _context.AddAsync(placaResult);
@@ -77,16 +77,14 @@ namespace Dgii.NcfApp.Services
             else { return new List<NcfResultHistory>(); }
         }
 
-        public async Task<IEnumerable<string>> GetPlacasHistory()
+        public async Task<IEnumerable<PlacasResultHistory>> GetPlacasHistory()
         {
-            //var result = await _context.PlacasResultHistory.ToListAsync();
-            //if(result is not null)
-            //{
-            //    return result;
-            //}
-            //else { return new List<Placa>(); }
-            return null;
-
+            var result = await _context.PlacasResultHistory.ToListAsync();
+            if (result is not null)
+            {
+                return result;
+            }
+            else { return new List<PlacasResultHistory>(); }
         }
     }
 }
