@@ -11,11 +11,17 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="RestSharp" Version="110.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="8.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.4" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Helpers\" />
+    <None Remove="Context\" />
+    <None Remove="Views\History\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Helpers\" />
+    <Folder Include="Context\" />
+    <Folder Include="Views\History\" />
   </ItemGroup>
 </Project>

@@ -40,6 +40,25 @@ public class HomeController : Controller
 
     }
 
+    public IActionResult Placas()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Placas([FromForm] string rnc, [FromForm] string placa)
+    {
+        var result = await _soapDgiiService.GetPlacaResult(rnc, placa);
+        if(result is not null)
+        {
+            ViewBag.PlacaResult = result;
+        }
+        ViewBag.Error = "No se encontro nigun registo con los datos proporcionados.";
+
+        return View();
+
+    }
+
     public IActionResult Privacy()
     {
         return View();

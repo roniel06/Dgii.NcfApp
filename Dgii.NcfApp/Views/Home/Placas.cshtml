@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenidos</h1>
+    <div class="jumbotron">
+        <h3>Consulta de Placas</h3>
+    </div>
+    <form method="post" asp-action="Placas">
+
+        <div class="row">
+            <div class="col-md-5">
+                <div class="form-control">
+                    <label class="label">Numero de RNC o Cedula</label>
+                    <input class="form-control" type="number" name="rnc" id="rnc" />
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-5">
+                <div class="form-control">
+                    <label class="label">Placa</label>
+                    <input class="form-control" name="placa" id="placa" />
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-4 offset-md-4">
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Validar</button>
+            </div>
+        </div>
+    </form>
+    <div class="row mt-5">
+        <div class="col-md-8 offset-md-2">
+
+            @{
+                if (ViewBag.Error is not null)
+                {
+                    <div class="alert alert-danger" role="alert">
+                        @ViewBag.Error
+                    </div>
+                }
+            }
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-8 offset-md-2">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>RNC</th>
+                            <th>NCF</th>
+                            <th>Razon Social / Nombre Comercial</th>
+                            <th>Comprobante</th>
+                            <th>Estado</th>
+                            <th>Fecha Vigencia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @*@{
+                            if (ViewBag.NcfResult is not null)
+                            {
+                                <tr>
+                                    <td>@ViewBag.NcfResult.Rnc</td>
+                                    <td>@ViewBag.NcfResult.Ncf</td>
+                                    <td>@ViewBag.NcfResult.Nombre</td>
+                                    <td>@ViewBag.NcfResult.Comprobante</td>
+                                    <td>@ViewBag.NcfResult.Estado</td>
+                                    <td>@ViewBag.NcfResult.FechaVigencia</td>
+                                </tr>
+                            }
+                        }*@
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
