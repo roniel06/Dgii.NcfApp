@@ -54,12 +54,12 @@ namespace Dgii.NcfApp.Services
         {
             var placaResult = new PlacasResultHistory
             {
-                Placa = placasResult.GetPlacaResult.placa.PLACA,
-                MarcaVehiculo = placasResult.GetPlacaResult.placa.MARCA_VEHICULO,
-                ModeloVehiculo = placasResult.GetPlacaResult.placa.MODELO_VEHICULO,
-                Color = placasResult.GetPlacaResult.placa.COLOR,
-                AnioFabricacion = placasResult.GetPlacaResult.placa.ANO_FABRICACION,
-                RncCedulaPropietario = placasResult.GetPlacaResult.placa.RNC_CEDULA_PROPIETARIO,
+                //Placa = placasResult.Placa.PLACA,
+                //MarcaVehiculo = placasResult.Placa.MARCA_VEHICULO,
+                //ModeloVehiculo = placasResult.Placa.MODELO_VEHICULO,
+                //Color = placasResult.Placa.COLOR,
+                //AnioFabricacion = placasResult.Placa.ANO_FABRICACION,
+                //RncCedulaPropietario = placasResult.Placa.RNC_CEDULA_PROPIETARIO,
                 FechaCreacion = DateTime.Now
             };
             await _context.AddAsync(placaResult);

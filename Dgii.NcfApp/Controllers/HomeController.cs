@@ -52,6 +52,7 @@ public class HomeController : Controller
         if(result is not null)
         {
             ViewBag.PlacaResult = result;
+            return View();
         }
         ViewBag.Error = "No se encontro nigun registo con los datos proporcionados.";
 
